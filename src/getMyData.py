@@ -1,6 +1,7 @@
-def getMyData(dir_out='data/', config_file='config.yaml'):
+def getMyData(config_file='../config.yaml', dir_out='data/'):
     '''
-    Grabs my data.mat file from the web.
+    Grabs my data.mat file from Dropbox. Puts it in the right folder.
+    Assumes that we are in home dir. Grabs url from config file.
     '''
     import yaml, subprocess, os
 
@@ -11,7 +12,7 @@ def getMyData(dir_out='data/', config_file='config.yaml'):
             print 'Ok. Overwriting data.mat'
         else:
             print 'Not overwritting file. Stopping'
-            return 1
+            return
 
     # Get url from config file
     config = yaml.load(open(config_file))
@@ -21,4 +22,4 @@ def getMyData(dir_out='data/', config_file='config.yaml'):
     cmd = 'wget -P ' + dir_out + ' ' + url
     subprocess.call(cmd, shell=True)
 
-    return 0
+    return 
