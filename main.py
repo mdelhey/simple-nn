@@ -1,9 +1,11 @@
 config_file = 'config.yaml'
 
-# Go to home dir
-from goToHome import goToHome
-goToHome()
+from src import *
 
-# Get data
-from getMyData import getMyData
+# Go to home dir
+goToHome(config_file, verbose=False)
+
+# Wget data.mat
 getMyData(config_file)
+
+# 
