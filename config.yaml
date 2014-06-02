@@ -1,2 +1,4 @@
 home_dir: '/Users/mdelhey/simple-nn/'
+
 data_url: 'https://dl.dropboxusercontent.com/u/1243252/data.mat'
+data_file: 'data.mat'
